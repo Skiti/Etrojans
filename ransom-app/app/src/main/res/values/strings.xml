@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ScooterToolkit</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Scooter Attacker Toolkit</string>
+    <string name="nav_header_subtitle">scooterattacktoolkit@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Near Scooters</string>
+    <string name="menu_attacks">Attacks</string>
+    <string name="menu_test">Test Scooter Protocol</string>
+
+    <string name="attack_description">
+        <b>Ransomware attack:</b> the scooter will be permanently locked until the victim pays and restores the original BMS. \n
+        <b>Disconnect attack:</b> the scooter BMS will be permanently disconnected from other internal components. Recover only by SWIM (physical access). \n
+        <b>DisableCharge attack:</b> the scooter will no longer charge until the victim restores the original BMS.
+    </string>
+</resources>
