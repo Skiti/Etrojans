@@ -71,7 +71,7 @@ def create_126_firmware(selected_firmware, data):
 
 
 
-def create_141_firmware(firmware,data):
+def create_141_firmware(selected_firmware,data):
     global binary_data
     binary_data = data
     print("\nCreating malicious firmware...")
