@@ -33,21 +33,21 @@ def mostra_differenze(file_path1, file_path2):
     differenze = confronta_file_binari(file1, file2)
 
     if differenze:
-        print("Differenze trovate:")
+        print("Differences found:")
         for posizione, byte1, byte2 in differenze:
             if byte1 is not None and byte2 is not None:
-                print(f"All'indirizzo {hex(posizione)} c'è una differenza: {hex(byte1)} -> {hex(byte2)}")
+                print(f"At address {hex(posizione)} there a difference: {hex(byte1)} -> {hex(byte2)}")
             elif byte1 is not None:
-                print(f"Il primo file ha un byte aggiuntivo all'indirizzo {hex(posizione)}: {hex(byte1)}")
+                print(f"First file has an additional byte at address {hex(posizione)}: {hex(byte1)}")
             else:
-                print(f"Il secondo file ha un byte aggiuntivo all'indirizzo {hex(posizione)}: {hex(byte2)}")
+                print(f"Second file has an additional byte at address {hex(posizione)}: {hex(byte2)}")
     else:
-        print("I file sono identici")
+        print("Identical files")
 
 
 
-# Inserisci i nomi dei file binari da confrontare
-nome_file1 = "1.4.1.bin"
-nome_file2 = "BMS141_mi3.pro2.1s.essential_batterySpoofing.bin"
+# Change to the BCTRL bin files you want to analyze
+bin1 = "1.4.1.bin"
+bin2 = "..\\malicious-payloads\\ES3\\uti.bin"
 
-mostra_differenze(nome_file1, nome_file2)
+mostra_differenze(bin1, bin2)
