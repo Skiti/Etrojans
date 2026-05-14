@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l6*xrcqlssjevaovt=m#jn_b)bp_je0su3%!^x1nb1!$j=8p6@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -72,18 +72,22 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ransomserver.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# Database - MongoEngine configuration
+# https://mongoengine.org/
+import mongoengine as me
 
+me.connect(
+    db='ransomware_db',
+    host='mongodb://localhost:27017/',
+    tz_aware=True
+)
+
+# Database - usa sqlite dummy per Django auth/sessions
 DATABASES = {
-        'default': {
-            'ENGINE': 'djongo',
-            'NAME': 'Cluster0',
-            'ENFORCE_SCHEMA': False,
-            'CLIENT': {
-                'host': 'mongodb+srv://<yourusername>:tEezkXb89FVPoNF8@cluster0.r3mlcub.mongodb.net/?retryWrites=true&w=majority'
-            }
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Password validation
